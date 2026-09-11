@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  * {
+    @apply border-slate-800;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+  }
+
+  .glow-border {
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
