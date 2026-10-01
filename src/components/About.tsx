@@ -44,6 +44,7 @@ const experience = [
     period: "Jun 2025 – Dec 2025",
     location: "Hyderabad, India",
     achievements: [
+      "Contracted to design and build a modern, high-performance Next.js commercial web application with interactive quote inquiry workflows",
       "Optimized MDM REST API endpoints, improving query efficiency by 15% through database indexing and caching strategies",
       "Built CI/CD pipeline using Bitbucket and Terraform for automated infrastructure provisioning on AWS",
       "Implemented comprehensive unit and integration testing suite, increasing code coverage from 60% to 85%",

@@ -45,15 +45,19 @@ const commands: Record<string, string[]> = {
   projects: [
     "Featured Projects:",
     "",
-    "1. Requestify (Full-Stack)",
+    "1. Deepa Electricals (Full-Stack / Contract)",
+    "   Contracted commercial website & automated quote platform",
+    "   Stack: Next.js, React, TypeScript, Tailwind CSS, Framer Motion, Resend",
+    "",
+    "2. Requestify (Full-Stack)",
     "   DJ-audience interaction platform with real-time features",
     "   Stack: Python, TypeScript, Flask, React, MySQL, GCP",
     "",
-    "2. ML Trading System (AI/ML)",
+    "3. ML Trading System (AI/ML)",
     "   Reinforcement learning-based algorithmic trading",
     "   Stack: Python, Q-Learning, Pandas, Event-Driven Architecture",
     "",
-    "3. IoT Sign Language Translator (IoT/Cloud)",
+    "4. IoT Sign Language Translator (IoT/Cloud)",
     "   Edge-to-cloud real-time gesture recognition",
     "   Stack: ESP32, Python, AWS EC2, OpenCV, MediaPipe",
   ],
@@ -85,6 +89,7 @@ const commands: Record<string, string[]> = {
     "",
     "Software Development Engineer Intern @ Deepa Electricals",
     "  Jun 2025 – Dec 2025 | Hyderabad, India",
+    "  • Contracted to design & build modern Next.js commercial web application",
     "  • Optimized REST APIs (+15% efficiency)",
     "  • Built CI/CD pipeline with Terraform",
   ],
@@ -136,7 +141,7 @@ export default function Terminal() {
 
   const handlePresetCommand = (cmd: string) => {
     handleCommand(cmd);
-    inputRef.current?.focus();
+    inputRef.current?.focus({ preventScroll: true });
   };
 
   return (
@@ -193,7 +198,8 @@ export default function Terminal() {
               {/* Terminal Content */}
               <div
                 ref={terminalRef}
-                className="p-4 font-mono text-sm h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-900"
+                onClick={() => inputRef.current?.focus({ preventScroll: true })}
+                className="p-4 font-mono text-sm h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-900 cursor-text"
               >
                 {history.map((cmd, index) => (
                   <div key={index} className="mb-4">
@@ -224,7 +230,6 @@ export default function Terminal() {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     className="flex-1 bg-transparent outline-none text-foreground ml-2 caret-primary"
-                    autoFocus
                   />
                 </form>
               </div>
